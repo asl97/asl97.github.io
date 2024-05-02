@@ -24,17 +24,21 @@
                 return create_icon(folder_name, '🗎');
             }
 
-            r = await fetch('index.html')
-            j = await r.json()
-            let [dirs, files] = j;
-            letmain = document.getElementById('main');
+            async function main(){
+                r = await fetch('index.html')
+                j = await r.json()
+                let [dirs, files] = j;
+                letmain = document.getElementById('main');
 
-            for (let folder of dirs){
-                main.appendChild(create_folder(folder));
+                for (let folder of dirs){
+                    main.appendChild(create_folder(folder));
+                }
+                for (let file of files){
+                    main.appendChild(create_file(file));
+                }
             }
-            for (let file of files){
-                main.appendChild(create_file(file));
-            }
+
+            main()
         </script>
     </body>
 </html>
