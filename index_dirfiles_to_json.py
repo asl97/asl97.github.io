@@ -10,7 +10,7 @@ def run():
                 if dir.startswith(s):
                     dirs.remove(dir)
         with open(os.path.join(root, "index.json"),'w') as f:
-            json.dump(files, f)
+            json.dump([dirs, files], f)
         jsons[root] = files
     with open('json_index.json', 'w') as f:
         json.dump(jsons, f)
