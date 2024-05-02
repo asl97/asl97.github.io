@@ -25,7 +25,7 @@
             }
 
             async function main(){
-                r = await fetch('index.html')
+                r = await fetch('index.json')
                 j = await r.json()
                 let [dirs, files] = j;
                 letmain = document.getElementById('main');
