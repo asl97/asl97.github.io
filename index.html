@@ -28,13 +28,13 @@
                 r = await fetch('index.json')
                 j = await r.json()
                 let [dirs, files] = j;
-                letmain = document.getElementById('main');
+                let mdiv = document.getElementById('main');
 
                 for (let folder of dirs){
-                    main.appendChild(create_folder(folder));
+                    mdiv.appendChild(create_folder(folder));
                 }
                 for (let file of files){
-                    main.appendChild(create_file(file));
+                    mdiv.appendChild(create_file(file));
                 }
             }
 
