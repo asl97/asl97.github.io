@@ -1,11 +1,30 @@
 <html>
-    <head></head>
+    <head>
+        <style>
+            #main {
+                display: flex;
+            }
+
+            .item {
+                place-items: center;
+                display: grid;
+                border: gray solid 2px;
+                margin: 1vh 1vw
+            }
+ 
+            .icon {
+                font-size: 5vw;
+            }
+        </style>
+    </head>
     <body>
         <div id="main"></div>
         <script>
             create_icon = (folder_name, icon)=>{
                 let div = document.createElement('div');
+                div.classList.add('item')
                 let idiv = document.createElement('div');
+                idiv.classList.add('icon')
                 idiv.textContent = icon;
                 div.appendChild(idiv);
 
