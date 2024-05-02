@@ -1,0 +1,40 @@
+<html>
+    <head></head>
+    <body>
+        <div id="main"></div>
+        <script>
+            create_icon = (folder_name, icon)=>{
+                let div = document.createElement('div');
+                let icon = document.createElement('div');
+                icon.textContent = icon;
+                div.appendChild(icon);
+
+                let text = document.createElement('span');
+                text.textContent = folder_name;
+                div.appendChild(text);
+
+                return div
+            }
+
+            create_folder = (folder_name)=>{
+                return create_icon(folder_name, '📁');
+            }
+
+            create_file = (folder_name)=>{
+                return create_icon(folder_name, '🗎');
+            }
+
+            r = await fetch('index.html')
+            j = await r.json()
+            let [dirs, files] = j;
+            letmain = document.getElementById('main');
+
+            for (let folder of dirs){
+                main.appendChild(create_folder(folder));
+            }
+            for (let file of files){
+                main.appendChild(create_file(file));
+            }
+        </script>
+    </body>
+</html>
