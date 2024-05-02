@@ -10,9 +10,10 @@ def run():
                 for s in basic_filters:
                     if dir.startswith(s):
                         dirs.remove(dir)
+            paths = [dirs, files]
             with open(os.path.join(root, "index.json"),'w') as f:
-                json.dump([dirs, files], f)
-            jsons[root] = files
+                json.dump(paths, f)
+            jsons[root] = paths
 
         json.dump(jsons, json_index)
 
