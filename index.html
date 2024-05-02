@@ -21,27 +21,32 @@
     <body>
         <div id="main"></div>
         <script>
-            create_icon = (folder_name, icon)=>{
+            create_icon = (name, icon)=>{
                 let div = document.createElement('div');
-                div.classList.add('item')
+                div.classList.add('item');
                 let idiv = document.createElement('div');
-                idiv.classList.add('icon')
+                idiv.classList.add('icon');
                 idiv.textContent = icon;
                 div.appendChild(idiv);
 
                 let text = document.createElement('span');
-                text.textContent = folder_name;
+                text.textContent = name;
                 div.appendChild(text);
 
                 return div
             }
 
             create_folder = (folder_name)=>{
-                return create_icon(folder_name, '📁');
+                let div = create_icon(folder_name, '📁');
+                div.onclick = ()=>{alert('Not implemented yet')};
+                return div
             }
 
-            create_file = (folder_name)=>{
-                return create_icon(folder_name, '🗎');
+            create_file = (file_name)=>{
+                let div = create_icon(file_name, '🗎');
+                // TODO: implement support for navigation with folder
+                div.onclick = ()=>{window.location.href += file_name};
+                return div
             }
 
             async function main(){
