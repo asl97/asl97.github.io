@@ -45,9 +45,11 @@
             create_file = (file_name)=>{
                 let div = create_icon(file_name, '📄');
                 // TODO: implement support for navigation with folder
-                let current_path = window.location.href.slice(0, window.location.href.lastIndexOf('/')+1)
-                div.onclick = ()=>{ window.location.href = current_path + file_name};
-                return div
+                let folder_path = '';
+                let a = document.createElement('a');
+                a.href = folder_path + file_name;
+                a.appendChild(div);
+                return a
             }
 
             async function main(){
