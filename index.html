@@ -45,33 +45,54 @@
 
             create_folder = (folder_name)=>{
                 let div = create_icon(folder_name, '📁');
-                div.onclick = ()=>{alert('Not implemented yet')};
+                let hash = new URL(window.location.hash.slice(1)+`${folder_name}/`, window.location.origin).pathname.slice(1);
+                div.onclick = ()=>{window.location.hash = hash}
                 return div
             }
 
             create_file = (file_name)=>{
                 let div = create_icon(file_name, '📄');
                 // TODO: implement support for navigation with folder
-                let folder_path = '';
+                let folder_path = get_folder_path();
                 let a = document.createElement('a');
                 a.href = folder_path + file_name;
                 a.appendChild(div);
                 return a
             }
 
-            async function main(){
-                r = await fetch('index.json')
+            hash_to_folder = ()=>{
+                return new URL(window.location.hash.slice(1), window.location.origin);
+            }
+            get_folder_path = hash_to_folder;
+
+            async function render_folder(div){
+                // clear the div
+                div.innerHTML = "";
+                
+                let json_path = new URL('index.json', get_folder_path());
+
+                r = await fetch(json_path.href)
                 j = await r.json()
                 let [dirs, files] = j;
-                let mdiv = document.getElementById('main');
+
+                if (window.location.hash !== ""){
+                    dirs.unshift('..')
+                }
 
                 for (let folder of dirs){
-                    mdiv.appendChild(create_folder(folder));
+                    div.appendChild(create_folder(folder));
                 }
+
                 for (let file of files){
-                    mdiv.appendChild(create_file(file));
+                    div.appendChild(create_file(file));
                 }
             }
+
+            main = ()=>{
+                let mdiv = document.getElementById('main');
+                render_folder(mdiv)
+            }
+            window.addEventListener("hashchange", main);
 
             main()
         </script>
