@@ -61,7 +61,10 @@
                 // TODO: implement support for navigation with folder
                 let folder_path = get_folder_path();
                 let a = document.createElement('a');
-                a.href = folder_path + file_name;
+                a.href = folder_path;
+                if (file_name !== 'index.html'){
+                    a.href += file_name
+                }
                 a.appendChild(div);
                 return a
             }
