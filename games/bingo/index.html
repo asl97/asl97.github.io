@@ -1,13 +1,22 @@
 <!-- Use Iframe so the browser path would show up as /games/bingo/ -->
-<style>
-body {
-    margin: 0;
-}
-iframe {
-    display: block;
-    border: none;
-    height: 100vh;
-    width: 100vw;
-}
-</style>
-<iframe src="https://asl97.github.io/Bingo-Spinner/">
+<head>
+    <style>
+    body {
+        margin: 0;
+    }
+    iframe {
+        display: block;
+        border: none;
+        height: 100vh;
+        width: 100vw;
+    }
+    </style>
+</head>
+<body>
+    <!-- Use javascript to set the src to avoid caching issue https://stackoverflow.com/a/3984072 -->
+    <iframe data-src="https://asl97.github.io/Bingo-Spinner/"></iframe>
+    <script>
+        var _ = document.getElementsByTagName("iframe")[0];
+        _.contentWindow.location.href = _.dataset.src
+    </script>
+</body>
