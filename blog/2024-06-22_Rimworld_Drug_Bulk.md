@@ -16,4 +16,5 @@ Only after a few days of thinking, I thought maybe it was in the base and it was
 This blog post is created incase anyone else searches for where is the bulk recipe added in vanilla.
 
 Keywords: rimworld bulk psychite tea drug vanilla source code x4 Yayo Flake
+
 Source code keywords: PsychoidLeaves PsychoidBrewing "Making psychite tea x4"

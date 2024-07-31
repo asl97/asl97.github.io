@@ -85,4 +85,5 @@ Technically one could just bruteforce reverse by testing `2**backrolls` number o
 Someone might be able to figure a better way with the information I have provided above.
 
 Keywords: Battle Cats Seed Tracker
+
 Source code keywords: advanceSeed ampuri bc-normal-seed-tracking
