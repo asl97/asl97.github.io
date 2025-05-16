@@ -1,0 +1,91 @@
+<style>
+  .bar {
+    box-sizing: border-box;
+    display: flex;
+  }
+  .holder {
+    display: grid;
+    margin: 2px;
+    place-items: center;
+  }
+  .hand {
+    width: 20px;
+    height: 40px;
+    border: 2px solid black;
+  }
+  .cart {
+    margin: 0px;
+    width: 3px;
+    height: calc(attr(data-angle px) * -1 / 2 + 30px);
+    transform-origin: bottom;
+    transform: rotate(attr(data-angle deg));
+  }
+  .card {
+    border: 2px solid blue;
+    background: white;
+    width: 15px;
+    height: 30px;
+  }
+</style>
+<div class="bar">
+  <div class="holder hand"></div>
+  <div class="holder hand"></div>
+  <div class="holder hand"></div>
+  <div class="holder hand"></div>
+  <div class="holder hand"></div>
+  <div data-angle="-20" class="holder cart">
+    <div class="card"></div>
+  </div>
+  <div data-angle="-10" class="holder cart">
+    <div class="card"></div>
+  </div>
+  <div data-angle="0" class="holder cart">
+    <div class="card"></div>
+  </div>
+  <div data-angle="10" class="holder cart">
+    <div class="card"></div>
+  </div>
+  <div data-angle="20" class="holder cart">
+    <div class="card"></div>
+  </div>
+  <div class="holder">
+    <div class="card"></div>
+  </div>
+</div>
+<script>
+  for (let card of document.getElementsByClassName('card')){
+    let ocss = card.style.cssText
+    card.addEventListener('click', ()=>{
+      // Figure out where to move the card
+      let parent = card.parentElement;
+      let next = parent.previousElementSibling || parent.parentElement.lastElementChild;
+
+      // Figure out the amount to rotate the card
+      let pangle = parent.dataset.angle || 0;
+      let nangle = next.dataset.angle || 0;
+      let angle = nangle - pangle;
+      let rotate = angle ? `rotate(${angle}deg) ` : "";
+
+      // Figure out where to move the card
+      let left = next.offsetLeft - parent.offsetLeft;
+      let top = next.offsetTop - parent.offsetTop;
+
+      // Animating the Move
+      const fxAnim = `transition: transform 0.5s; transform: ${rotate} translate(${left}px, ${top}px);`;
+      card.style.cssText = ocss + 'transform: translate(0, 0);';
+      setTimeout(() => card.style.cssText += fxAnim, 0);
+
+      // Restore the original CSS and actually finally move the element
+      card.addEventListener("transitionend", ()=>{
+        card.style.cssText = ocss;
+        next.append(card);
+      }, { once: true,});
+    })
+  }
+  function fun(){
+    for (let card of document.getElementsByClassName('card')){
+        card.click();
+    }
+  }
+  setInterval(fun,1000);
+</script>

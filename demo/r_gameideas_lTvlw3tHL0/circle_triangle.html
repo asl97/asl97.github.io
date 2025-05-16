@@ -1,0 +1,41 @@
+<canvas id='canvas' width="16" height="16"></canvas>
+<script>
+canvas = document.getElementById("canvas");
+
+ctx = canvas.getContext("2d");
+ctx.imageSmoothingEnabled = false;
+ctx.beginPath();
+ctx.ellipse(4, 4, 4, 4, Math.PI / 4, 0, 2 * Math.PI);
+ctx.stroke();
+
+let region = new Path2D();
+region.moveTo(9, 9);
+region.lineTo(9, 15);
+region.lineTo(15, 15);
+region.closePath();
+
+// Fill path
+ctx.fillStyle = "green";
+ctx.fill(region);
+
+function rotate(){
+  idata = ctx.getImageData(0, 0, 16, 16);
+  data = idata.data
+  ndata = []
+  for (y=0; y < idata.height; y++){
+    for (x=0; x < idata.width; x++){
+      ndata[((x+1)*(idata.width)+idata.width-1-y)*4] = data[(y*(idata.width)+x)*4]
+      ndata[((x+1)*(idata.width)+idata.width-1-y)*4+1] = data[(y*(idata.width)+x)*4+1]
+      ndata[((x+1)*(idata.width)+idata.width-1-y)*4+2] = data[(y*(idata.width)+x)*4+2]
+      ndata[((x+1)*(idata.width)+idata.width-1-y)*4+3] = data[(y*(idata.width)+x)*4+3]
+    }
+  }
+  for (i=0; i<ndata.length; i++){
+    idata.data[i] = ndata[i]
+  }
+  //idata.data = ndata
+  ctx.putImageData(idata, 0, 0);
+}
+for (i=16-1; i>0; i--){console.log(i)}
+setInterval(rotate, 500)
+</script>

@@ -1,0 +1,17 @@
+<svg id='test' width="16" height="16" viewBox='8 8 16 16' xmlns="http://www.w3.org/2000/svg">
+<polygon points="9,9 9,17 17,17" style="fill:lime;stroke:purple;stroke-width:1" />
+</svg>
+
+<script>
+  test = document.getElementById('test')
+  t = setInterval(()=>{
+    for (polygon of test.children){
+      for (point of polygon.points){
+        x = point.x
+        y = point.y
+        point.y = x
+        point.x = 33 - y
+      }
+    }
+  }, 500)
+</script>
