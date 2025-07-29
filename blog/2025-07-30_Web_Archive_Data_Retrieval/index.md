@@ -206,7 +206,7 @@ Maybe, who knows.
 
 Turns out there was a group archiving the works by the specific creator.
 
-Guess they never turned to archiver to help on their project.
+Guess they never turned to an archiver to help on their project.
 
 And I found the group by chance and started researching and putting together something to pull everything off the internet archive.
 
