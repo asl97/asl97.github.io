@@ -20,7 +20,7 @@ Even their past and current content are no longer similar, from my point of view
 
 Maybe I am overstepping, but I feel the younger old creator wouldn't have wanted their works removed, they happily published works with fluctuating level of quality back then, about their friends and about being grateful for their attempts to be better friends, If I don't step up to protect and preserve their works from the corporate monster they seem to have become, wanting to cut off any links to the formal friends who became controversial, who will if not I?
 
-For 'He' was, whether 'They' knew it or not, a hero to some of us in our childhood and doesn't deserve to get wiped off the internet just because 'They' became famous and their past, 'He' became problematic to "Them".
+For 'He' was, whether 'They' knew it or not, a hero (for the lack of better words) to some of us in our childhood and doesn't deserve to get wiped off the internet just because 'They' became famous and their past, 'He' became problematic to "Them".
 
 
 #### Code part
