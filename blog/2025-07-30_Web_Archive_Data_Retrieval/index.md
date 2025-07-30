@@ -16,7 +16,7 @@ And that with the knowledge that I have, I felt the need to step up.
 
 Especially after finding out the reason the creator given for actively censoring other users from even mentioning their old name, let alone posting their past content.
 
-Even their past and current content are no longer similar, from my point of view being out of the loop for more than a decade, they are as good as two seperate people. As an original fan, their current public statements and action alienated me more and more as I dug deeper and deeper into the internet.
+Even their past and current content are no longer similar, from my point of view being out of the loop for more than a decade, they are as good as two separate people. As an original fan, their current public statements and action alienated me more and more as I dug deeper and deeper into the internet.
 
 Maybe I am overstepping, but I feel the younger old creator wouldn't have wanted their works removed, they happily published works with fluctuating level of quality back then, about their friends and about being grateful for their attempts to be better friends, If I don't step up to protect and preserve their works from the corporate monster they seem to have become, wanting to cut off any links to the formal friends who became controversial, who will if not I?
 
