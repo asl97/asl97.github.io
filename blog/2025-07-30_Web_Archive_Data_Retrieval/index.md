@@ -1,12 +1,31 @@
-I was hitted with a huge case of nostalgia recently, so I went digging quite deep on the internet only to find out the creator went quite far into deleting their work off the internet for some unknown reason.
+#### History-Background
 
-So I went digging deep into the Internet Archive to find any trace of the works.
+I was hitted with a huge case of nostalgia recently, so I went digging quite deep on the internet only to find out the creator went quite far into deleting their work off the internet for some unknown reason at the time, having changed name and wiped off their old name from the internet.
 
-Found out the Internet Archive has an API to search with filter which was much better than crawling the website.
+So I went digging deep into the Internet Archive to find any trace of the works, to which I found some uploader marking their works as 'lost media'.
+
+I then uploaded what I had on my own hard disk to the Internet Archive.
+
+I later found out there was a group archiving the works by the specific creator.
+
+And that the Internet Archive has an API to search with filter, which was much better than crawling the website.
 
 https://github.com/internetarchive/wayback/blob/master/wayback-cdx-server/README.md
 
-As the creator wanted to hide away their past, I will just give an example of what I did using my website instead.
+And that with the knowledge that I have, I felt the need to step up.
+
+Especially after finding out the reason the creator given for actively censoring other users from even mentioning their old name, let alone posting their past content.
+
+Even their past and current content are no longer similar, from my point of view being out of the loop for more than a decade, they are as good as two seperate people. As an original fan, their current public statements and action alienated me more and more as I dug deeper and deeper into the internet.
+
+Maybe I am overstepping, but I feel the younger old creator wouldn't have wanted their works removed, they happily published works with fluctuating level of quality back then, about their friends and about being grateful for their attempts to be better friends, If I don't step up to protect and preserve their works from the corporate monster they seem to have become, wanting to cut off any links to the formal friends who became controversial, who will if not I?
+
+For 'He' was, whether 'They' knew it or not, a hero to some of us in our childhood and doesn't deserve to get wiped off the internet just because 'They' became famous and their past, 'He' became problematic to "Them".
+
+
+#### Code part
+
+As the creator wanted to hide away their past, I would give out their names and will instead just give an example of what I did using my website instead.
 
 First I used the cdx api on the internet archive to fetch all the pages on their domain:
 
@@ -198,11 +217,11 @@ for link in sorted(links):
 The resulting 301_datalinks200 can then be passed into wget or a better download manager to download everything and archive it all
 
 
-##### Is there an existing Web Archive downloader?
+#### Is there an existing Web Archive downloader?
 
 Maybe, who knows.
 
-##### Why was this blog post created?
+#### Why was this blog post created?
 
 Turns out there was a group archiving the works by the specific creator.
 
