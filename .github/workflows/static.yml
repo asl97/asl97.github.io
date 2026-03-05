@@ -31,8 +31,12 @@ jobs:
     steps:
       - name: Checkout Master
         uses: actions/checkout@v4
+      - name: make sitemap.html placeholder
+        run: touch sitemap.html
       - name: Run index.json generator
         run: python index_dirfiles_to_json.py
+      - name: Run sitemap.html generator
+        run: python gen_sitemap.py
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
