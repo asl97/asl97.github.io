@@ -26,7 +26,7 @@ https://api.github.com/orgs/MorpheApp
 
 `"created_at": "2025-11-26T11:40:38Z"`
 
-https://api.github.com/orgs/Revanced
+https://api.github.com/orgs/ReVanced
 
 `"created_at": "2022-03-14T19:42:45Z"`
 
