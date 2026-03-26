@@ -1,3 +1,5 @@
+Part 2: <a href="./2026-03-26_Revanced_VS_Morphe_DMCA_Part2.md">2026-03-26_Revanced_VS_Morphe_DMCA_Part2.md</a>
+
 ### Sloppy DMCA take down strike past contributors
 
 The whole network of 702 forks was stricken down by MorpheApp in a DMCA filing.
