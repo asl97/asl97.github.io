@@ -1,0 +1,26 @@
+<html>
+  <body>
+    <script type="text/plain">
+      alert("Hello World!")
+    </script>
+    <script>
+      let button = document.createElement('button');
+      button.innerText = "run scripts";
+      button.onclick=()=>{
+        for (let s of Array.from(document.getElementsByTagName('script'))){
+          if (s.type == 'text/plain') {
+            let ns = s.cloneNode(true);
+            ns.removeAttribute('type');
+            // New cloned script tag gets run immediately on insert
+            s.parentElement.insertBefore(ns, s);
+            // There is an hidden "already ran" meta data
+            // so if the new clone script gets cloned again, it would not run,
+            // as such we keep the original un-run script and remove the cloned instead
+            ns.remove();
+          }
+        }
+      }
+      document.body.appendChild(button);
+    </script>
+  </body>
+</html>
